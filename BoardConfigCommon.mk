@@ -65,7 +65,8 @@ AB_OTA_PARTITIONS += \
     odm \
     system \
     vendor \
-    vbmeta
+    vbmeta \
+    recovery
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
@@ -145,9 +146,7 @@ SOONG_CONFIG_ONEPLUS_MSMNILE_SENSORS := ALS_POS_X ALS_POS_Y
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
-
+BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := /opt/droid/keys/releasekey.key
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
